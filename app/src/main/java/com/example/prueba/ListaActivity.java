@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.prueba.adapters.NameAdapter;
+import com.example.prueba.adapters.AnimeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class ListaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
 
-        NameAdapter adapter = new NameAdapter(data(),dataphone());
+        AnimeAdapter adapter = new AnimeAdapter(data());
 
         RecyclerView rvLista =  findViewById(R.id.rvListaSimple);
         rvLista.setLayoutManager(new LinearLayoutManager(this));
@@ -26,32 +26,20 @@ public class ListaActivity extends AppCompatActivity {
     }
 
 
-    private List<String> data() {
-        List<String> names = new ArrayList<>();
-        names.add("Luis");
-        names.add("Marcos");
-        names.add("Alonso");
-        names.add("Lionel");
-        names.add("Cristiano");
-        names.add("Luis");
-        names.add("Marcos");
+    private List<Anime> data() {
+        //String titles, String descriptions, Boolean favorites, String imageurl
+        List<Anime> items = new ArrayList<>();
+        items.add(new Anime("One piece","Lore is a podcast about the frightening history behind common folklore. ... LORE. SOMETIMES THE TRUTH IS MORE FRIGHTENING THAN FICTION. About · Listen ...",true,"https://c-cl.cdn.smule.com/rs-s80/arr/b5/0a/8f387d33-086f-4ab5-9e3b-9643930ca151.jpg"));
+        items.add(new Anime("One piece","Lore is a podcast about the frightening history behind common folklore. ... LORE. SOMETIMES THE TRUTH IS MORE FRIGHTENING THAN FICTION. About · Listen ...",true,"https://c-cl.cdn.smule.com/rs-s80/arr/b5/0a/8f387d33-086f-4ab5-9e3b-9643930ca151.jpg"));
+        items.add(new Anime("One piece","Lore is a podcast about the frightening history behind common folklore. ... LORE. SOMETIMES THE TRUTH IS MORE FRIGHTENING THAN FICTION. About · Listen ...",true,"https://c-cl.cdn.smule.com/rs-s80/arr/b5/0a/8f387d33-086f-4ab5-9e3b-9643930ca151.jpg"));
+        items.add(new Anime("One piece","Lore is a podcast about the frightening history behind common folklore. ... LORE. SOMETIMES THE TRUTH IS MORE FRIGHTENING THAN FICTION. About · Listen ...",true,"https://c-cl.cdn.smule.com/rs-s80/arr/b5/0a/8f387d33-086f-4ab5-9e3b-9643930ca151.jpg"));
+        items.add(new Anime("One piece","Lore is a podcast about the frightening history behind common folklore. ... LORE. SOMETIMES THE TRUTH IS MORE FRIGHTENING THAN FICTION. About · Listen ...",true,"https://c-cl.cdn.smule.com/rs-s80/arr/b5/0a/8f387d33-086f-4ab5-9e3b-9643930ca151.jpg"));
+        items.add(new Anime("One piece","Lore is a podcast about the frightening history behind common folklore. ... LORE. SOMETIMES THE TRUTH IS MORE FRIGHTENING THAN FICTION. About · Listen ...",true,"https://c-cl.cdn.smule.com/rs-s80/arr/b5/0a/8f387d33-086f-4ab5-9e3b-9643930ca151.jpg"));
 
+        
 
-        return names;
-
-    }
-    private List<String> dataphone() {
-        List<String> names = new ArrayList<>();
-        names.add("929928190");
-        names.add("929928191");
-        names.add("929928192");
-        names.add("929928193");
-        names.add("929928194");
-        names.add("929928195");
-        names.add("929928196");
-
-
-        return names;
+        return items;
 
     }
+
 }
