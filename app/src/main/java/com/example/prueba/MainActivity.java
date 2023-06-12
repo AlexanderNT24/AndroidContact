@@ -20,21 +20,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
 
-        Button btnContact = this.findViewById(R.id.btnContact);
+        Button btnMisPokemones = this.findViewById(R.id.buttonMisPokemones);
 
-        Button btnAdd = this.findViewById(R.id.btnAddContact);
+        Button btnAdd = this.findViewById(R.id.crearPokemon);
 
 
-        btnContact.setOnClickListener(view -> {
-
+        btnMisPokemones.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), ListaActivity.class);
+            startActivity(intent);
 
 
 
         });
-        btnContact.setOnClickListener(view -> {
+        btnAdd.setOnClickListener(view -> {
 
 
-            Intent intent = new Intent(getApplicationContext(), ListaActivity.class);
+            Intent intent = new Intent(getApplicationContext(), CreateActivity.class);
             startActivity(intent);
 
         });
